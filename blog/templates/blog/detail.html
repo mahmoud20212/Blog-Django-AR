@@ -11,8 +11,8 @@
     alt="صورة الناشر"
   />
   <span class="text-secondary">نشر في {{post.post_date|date:'d-m-Y'}}</span>
-  <h3><a class="text-dark" href="">{{post.title}}</a></h3>
-  <p>{{post.content}}</p>
+  <h3><a class="text-dark text-break" href="">{{post.title}}</a></h3>
+  <p class="text-break">{{post.content}}</p>
 </div>
 
 <h2 class="border-bottom mt-5 mb-3">التعليقات ({{comments.count}})</h2>
@@ -22,7 +22,7 @@
     ( {{i.name}} )
     <span class="text-secondary">{{i.comment_date|date:'d-m-Y'}}</span>
   </h6>
-  <p class="mb-0">{{i.body}}</p>
+  <p class="mb-0 text-break">{{i.body}}</p>
 </div>
 {% empty %}
 <div class="text-center mb-3 p-4 comment">

@@ -1,6 +1,13 @@
 {% extends 'base_generic.html' %}
 {% load static %}
 {% block content %}
+    {% if messages %}
+        {% for i in messages %}
+            <div class="alert alert-{{i.tags}}" role="alert">
+                {{i}}
+            </div>
+        {% endfor %}
+    {% endif %}
     {% for i in posts %}
         <div class="border p-3 mb-3">
             <img class="img-fluid rounded-circle border m-2" width="70px" src="{% static 'blog/images/mim-logo.png' %}" alt="صورة الناشر">

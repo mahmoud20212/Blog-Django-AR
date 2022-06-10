@@ -25,6 +25,9 @@ section a{
 section a:hover{
     text-decoration: underline;
 }
+a.btn{
+    text-decoration: none !important;
+}
 /* Start Post Content */
 .post{
     border: 1px solid #ccc;
