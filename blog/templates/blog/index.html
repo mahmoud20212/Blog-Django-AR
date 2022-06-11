@@ -8,13 +8,33 @@
             </div>
         {% endfor %}
     {% endif %}
+    {% if posts %}
     {% for i in posts %}
         <div class="border p-3 mb-3">
-            <img class="img-fluid rounded-circle border m-2" width="70px" src="{{i.author.profile.image.url}}" alt="صورة الناشر">
+            <img class="img-fluid rounded border m-2 img-thumbnail" style="width: 120px; height: 120px;" src="{{i.author.profile.image.url}}" alt="صورة الناشر">
             <span class="text-secondary">نشر في {{i.post_date|date:'d-m-Y'}}</span>
-            <h3><a class="text-dark text-break" href="{% url 'detail' i.id %}">{{i.title}}</a></h3>
-            <p class="text-break">{{i.content}}</p>
+            <h3>
+                <a class="text-dark text-break" href="{% url 'detail' i.id %}">
+                {% if i.title|length > 50 %}
+                    {{i.title|slice:'50'}}..
+                {% else %}
+                    {{i.title}}
+                {% endif %}
+                </a>
+            </h3>
+            <p class="text-break">
+            {% if i.content|length > 45 %}
+                {{i.content|slice:'45'}}..
+            {% else %}
+                {{i.content}}
+            {% endif %}
+            </p>
         </div>
     {% endfor %}
+    {% else %}
+    <div class="text-center mb-3 p-4 comment">
+        <h5 class="mb-0">لا يوجد تدوينات.</h5>
+    </div>
     {% include 'blog/pagination.html' with page=posts %}
+    {% endif %}
 {% endblock %}

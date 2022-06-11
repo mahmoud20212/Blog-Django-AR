@@ -5,21 +5,24 @@
 {% block content %}
 <div class="border p-3 mb-3">
   <img
-    class="img-fluid rounded-circle border m-2"
+    class="img-fluid rounded border m-2 img-thumbnail"
     width="70px"
     src="{{post.author.profile.image.url}}"
     alt="صورة الناشر"
+    style="width: 120px; height: 120px;"
   />
   <span class="text-secondary">نشر في {{post.post_date|date:'d-m-Y'}}</span>
   {% if post.author == user %}
   <!-- Edit -->
-  <div class="form-group btn-editing mt-4">
+  <div class="form-group btn-editing mt-5">
     <a class="btn btn-secondary" href="{% url 'post-update' post.id %}">تحرير</a>
     <a class="btn btn-danger" href="{% url 'post-delete' post.id %}">حذف</a>
   </div>
   <!-- End Edit -->
   {% endif %}
-  <h3><a class="text-dark text-break" href="">{{post.title}}</a></h3>
+  <h3 class="">
+    <p class="text-dark text-break">{{post.title}}</p>
+  </h3>
   <p class="text-break">{{post.content}}</p>
 </div>
 
