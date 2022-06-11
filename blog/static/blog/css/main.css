@@ -57,3 +57,9 @@ a.btn{
     margin-bottom: 20px;
 }
 /* End Comment */
+.btn-editing{
+    float: left;
+}
+.back-btn{
+    float: left;
+}
