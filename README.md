@@ -1,1 +1,1 @@
-# blog-django-ar
+# Blog-Django-AR
