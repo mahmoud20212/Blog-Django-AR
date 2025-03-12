@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block seo %}
+<meta name="description" content="من أنا">
+<meta name="keywords" content="{{ setting.keywords }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ setting.site_title }} | من أنا">
+<meta property="og:description" content="{{ setting.tagline }}">
+<meta property="og:image" content="{{ setting.logo.url }}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ setting.site_title }} | من أنا">
+<meta name="twitter:description" content="{{ setting.tagline }}">
+<meta name="twitter:image" content="{{ setting.logo.url }}">
+{% endblock %}
+{% block content %}
+<h3 class="border-bottom">من أنا</h3>
+<div class="mb-5">
+    <p>
+        {{ about_info.description|linebreaks }}
+    </p>
+</div>
+{% endblock %}

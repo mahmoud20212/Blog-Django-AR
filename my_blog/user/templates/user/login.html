@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- For Crispy Forms -->
+{% load crispy_forms_tags %}
+{% block seo %}
+<meta name="description" content="تسجيل الدخول">
+<meta name="keywords" content="{{ setting.keywords }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ setting.site_title }} | تسجيل الدخول">
+<meta property="og:description" content="تسجيل الدخول">
+<meta property="og:image" content="{{ setting.logo.url }}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ setting.site_title }} | تسجيل الدخول">
+<meta name="twitter:description" content="تسجيل الدخول">
+<meta name="twitter:image" content="{{ setting.logo.url }}">
+{% endblock %}
+{% block content %}
+<div class="border p-4 mb-5">
+    <legend class="border-bottom pb-1 mb-3">التسجيل الدخول</legend>
+    {% if messages %}
+        {% for i in messages %}
+            <div class="alert alert-{{i.tags}}" role="alert">
+                {{i}}
+            </div>
+        {% endfor %}
+    {% endif %}
+  <form action="" method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button class="btn btn-secondary mb-4" type="submit">التسجيل الدخول</button>
+  </form>
+  <div class="border-top pt-2">
+    <small>إذا لم يكن لديك حساب من قبل فيمكنك <a href="{% url 'register' %}">تسجيل من هنا</a></small>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<ul class="list-group list-group-flush latest-post border-top-0 my-2">
+    {% for i in l_posts %}
+    <li class="list-group-item latest-post-item">
+        <a class="text-dark" href="{{ i.get_absolute_url }}">
+            {% if i.title|length > 40 %}
+                {{i.title|slice:'40'}}..
+            {% else %}
+                {{i.title}}
+            {% endif %}
+        </a>
+    </li>
+    {% empty %}
+    <li class="list-group-item latest-comment-item">لا يوجد تدوينات.</li>
+    {% endfor %}
+</ul>

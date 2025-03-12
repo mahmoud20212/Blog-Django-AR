@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-01 12:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\user\apps.py:8
+#, fuzzy
+#| msgid "user"
+msgid "users"
+msgstr "المستخدمين"
+
+#: .\user\forms.py:8 .\user\forms.py:33
+msgid "username"
+msgstr "إسم المستخدم"
+
+#: .\user\forms.py:8
+msgid "username should not contain spaces."
+msgstr "اسم المستخدم لا ينبغي أن يحتوي على مسافات."
+
+#: .\user\forms.py:9 .\user\forms.py:43
+msgid "email"
+msgstr "البريد الإلكتروني"
+
+#: .\user\forms.py:10 .\user\forms.py:41 .\user\forms.py:42
+msgid "first name"
+msgstr "الإسم الأول"
+
+#: .\user\forms.py:11
+msgid "last name"
+msgstr "الإسم الأخير"
+
+#: .\user\forms.py:12 .\user\forms.py:34
+msgid "password"
+msgstr "كلمة المرور"
+
+#: .\user\forms.py:12
+msgid "password should not be less than 8 items."
+msgstr "يجب ألا تقل كلمة المرور عن 8 عناصر."
+
+#: .\user\forms.py:13
+msgid "confirm password"
+msgstr "تأكيد كلمة المرور"
+
+#: .\user\forms.py:23
+msgid "password not matching."
+msgstr "كلمة المرور غير متطابقة."
+
+#: .\user\forms.py:29
+msgid "this username already exists."
+msgstr "اسم المستخدم هذا موجود بالفعل."
+
+#: .\user\models.py:8
+msgid "image"
+msgstr "صورة"
+
+#: .\user\models.py:9
+msgid "user"
+msgstr "المستخدم"
+
+#: .\user\models.py:12
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+#: .\user\models.py:13
+msgid "Profiles"
+msgstr "الملفات الشخصية"
+
+#: .\user\views.py:19
+#, python-format
+msgid ""
+"Congratulations %(new_user)s the registration process has been completed "
+"successfully."
+msgstr "تهانينا %(new_user)s لقد تمت عملية التسجيل بنجاح."
+
+#: .\user\views.py:40
+msgid "there is an error in the username or password."
+msgstr "هناك خطأ في اسم المستخدم أو كلمة المرور."
+
+#: .\user\views.py:85
+msgid "profile updated successfully."
+msgstr "تم تحديث الملف الشخصي بنجاح."
+
+#~ msgid "users management"
+#~ msgstr "إدارة المستخدمين"

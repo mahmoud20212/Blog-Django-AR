@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+<meta name="description" content="{{ setting.tagline }}">
+<meta name="keywords" content="{{ setting.keywords }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ setting.site_title }} | أحدث المقالات">
+<meta property="og:description" content="{{ setting.tagline }}">
+<meta property="og:image" content="{{ setting.logo.url }}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ setting.site_title }} | أحدث المقالات">
+<meta name="twitter:description" content="{{ setting.tagline }}">
+<meta name="twitter:image" content="{{ setting.logo.url }}">
+{% endblock %}
+{% block content %}
+{% if messages %}
+{% for i in messages %}
+<div class="alert alert-{{i.tags}}" role="alert">
+    {{i}}
+</div>
+{% endfor %}
+{% endif %}
+{% if posts %}
+{% for i in posts %}
+<div class="border p-3 mb-3">
+    <div class="d-flex align-items-center">
+        <img class="img-fluid rounded border m-2 img-thumbnail object-fit-cover" style="width: 120px; height: 120px;"
+            src="{{i.author.profile.image.url}}" alt="صورة الناشر">
+        <div class="row">
+            <div class="col-lg">
+                <span class="text-secondary">
+                    نشر في {{i.post_date}}
+                    <br>
+                    بواسطة {{i.author}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <h3>
+        <a class="text-dark text-break" href="{{ i.get_absolute_url }}">
+            {{ i.title }}
+        </a>
+    </h3>
+    <p class="text-break">
+        {{ i.content|truncatewords:30|linebreaks }}
+    </p>
+</div>
+{% endfor %}
+{% include 'blog/pagination.html' with page=posts %}
+{% else %}
+<div class="text-center mb-3 p-4 comment">
+    <h5 class="mb-0">لا يوجد تدوينات.</h5>
+</div>
+{% endif %}
+{% endblock %}

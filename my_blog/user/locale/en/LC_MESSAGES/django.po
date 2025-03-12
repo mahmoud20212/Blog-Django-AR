@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-01 12:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\user\apps.py:8
+msgid "users"
+msgstr ""
+
+#: .\user\forms.py:8 .\user\forms.py:33
+msgid "username"
+msgstr ""
+
+#: .\user\forms.py:8
+msgid "username should not contain spaces."
+msgstr ""
+
+#: .\user\forms.py:9 .\user\forms.py:43
+msgid "email"
+msgstr ""
+
+#: .\user\forms.py:10 .\user\forms.py:41 .\user\forms.py:42
+msgid "first name"
+msgstr ""
+
+#: .\user\forms.py:11
+msgid "last name"
+msgstr ""
+
+#: .\user\forms.py:12 .\user\forms.py:34
+msgid "password"
+msgstr ""
+
+#: .\user\forms.py:12
+msgid "password should not be less than 8 items."
+msgstr ""
+
+#: .\user\forms.py:13
+msgid "confirm password"
+msgstr ""
+
+#: .\user\forms.py:23
+msgid "password not matching."
+msgstr ""
+
+#: .\user\forms.py:29
+msgid "this username already exists."
+msgstr ""
+
+#: .\user\models.py:8
+msgid "image"
+msgstr ""
+
+#: .\user\models.py:9
+msgid "user"
+msgstr ""
+
+#: .\user\models.py:12
+msgid "Profile"
+msgstr ""
+
+#: .\user\models.py:13
+msgid "Profiles"
+msgstr ""
+
+#: .\user\views.py:19
+#, python-format
+msgid ""
+"Congratulations %(new_user)s the registration process has been completed "
+"successfully."
+msgstr ""
+
+#: .\user\views.py:40
+msgid "there is an error in the username or password."
+msgstr ""
+
+#: .\user\views.py:85
+msgid "profile updated successfully."
+msgstr ""

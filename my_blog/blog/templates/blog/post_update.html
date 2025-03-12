@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- For Crispy Forms -->
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="border p-4 mb-5">
+    <legend class="border-bottom pb-1 mb-3">تحرير التدوينة</legend>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button class="btn btn-secondary mb-4" type="submit">تحديث</button>
+  </form>
+</div>
+{% endblock %}

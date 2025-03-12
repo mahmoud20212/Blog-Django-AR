@@ -1,0 +1,75 @@
+{% load static %}
+{% load post_tag %}
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% block seo %}
+  {% endblock %}
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="{% static 'blog/css/main.css' %}" />
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="{% static 'blog/css/all.min.css' %}" />
+  <link rel="shortcut icon" href="{{ setting.site_icon.url }}" type="image/x-icon" />
+  
+  <!-- Title -->
+  {% if title %}
+  <title>{{setting.site_title}} | {{title}}</title>
+  {% else %}
+  <title>{{setting.site_title}}</title>
+  {% endif %}
+</head>
+
+<body>
+  <!-- Navbar -->
+  {% include 'navbar.html' %}
+  <!-- End Navbar -->
+  
+  <main>
+    <section>
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-md-8">
+            <!-- Start Block -->
+            {% block content %}
+            {% endblock %}
+            <!-- End Block -->
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3 rounded-0">
+              <h3 class="text-center bg-secondary text-light p-2 m-0">
+                آخر التدوينات
+              </h3>
+              {% latest_post %}
+            </div>
+            <div class="card mb-3 rounded-0">
+              <h3 class="text-center bg-secondary text-light p-2 m-0">
+                آخر التعليقات
+              </h3>
+              {% latest_comments %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  {% include 'footer.html' %}
+  <!-- End Footer -->
+  
+  <!-- Bootstrap JS -->
+  <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- Fontawesome JS -->
+  <script src="{% static 'blog/js/fontawesome-all.min.js' %}"></script>
+  <!-- JQuery -->
+  <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+</body>
+
+</html>
