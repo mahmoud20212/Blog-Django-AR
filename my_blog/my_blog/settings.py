@@ -13,6 +13,10 @@ import dj_database_url
 import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -105,6 +109,7 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 # Database configuration
 DATABASES = {
     'default': dj_database_url.config(
+        env='blog_POSTGRES_URL',
         default='postgres://postgres.mrgreccokjjlnovllkmg:xMDyn5HXcMGCsztH@aws-0-eu-central-1.pooler.supabase.com:6543/postgres?sslmode=require',
         conn_max_age=600,
         ssl_require=True
