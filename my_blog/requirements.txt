@@ -8,3 +8,4 @@ sqlparse==0.4.2
 toml==0.10.2
 tzdata==2022.1
 psycopg2-binary
+# python-dotenv

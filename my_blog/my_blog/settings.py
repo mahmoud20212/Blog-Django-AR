@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import dj_database_url
 import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
@@ -88,18 +88,27 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres.mrgreccokjjlnovllkmg ',
+#         'PASSWORD': 'xMDyn5HXcMGCsztH',
+#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+#         'PORT': '6543',
+#         # 'OPTIONS': {
+#         #     'sslmode': 'require',  # Enforce SSL
+#         # },
+#     }
+# }
+
+# Database configuration
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'neondb',
-        'USER': 'neondb_owner',
-        'PASSWORD': 'npg_DBuFnjqs3W8K',
-        'HOST': 'ep-gentle-night-a2mf4773-pooler.eu-central-1.aws.neon.tech',
-        'PORT': '5432',  # Default PostgreSQL port
-        'OPTIONS': {
-            'sslmode': 'require',  # Enforce SSL
-        },
-    }
+    'default': dj_database_url.config(
+        default='postgres://postgres.mrgreccokjjlnovllkmg:xMDyn5HXcMGCsztH@aws-0-eu-central-1.pooler.supabase.com:6543/postgres?sslmode=require',
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 
