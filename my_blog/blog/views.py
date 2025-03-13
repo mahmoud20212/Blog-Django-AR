@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.template.defaultfilters import slugify
 from .models import Post, About
 from .forms import NewComment, PostCreateForm
 
@@ -69,6 +70,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        form.instance.slug = slugify(form.cleaned_data['title'])
         return super().form_valid(form)
     
     def get_context_data(self, **kwargs):
@@ -84,6 +86,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        form.instance.slug = slugify(form.cleaned_data['title'])
         return super().form_valid(form)
 
     def test_func(self):
